@@ -12,11 +12,11 @@ setwd("~/buckets/b1/") # establezco la carpeta donde voy a trabajar
 dataset <- fread("./datasets/dataset_pequeno.csv")
 
 dir.create("./exp/", showWarnings = FALSE)
-dir.create("./exp/EA4810/", showWarnings = FALSE)
-setwd("./exp/EA4810")
+dir.create("./exp/EA4811/", showWarnings = FALSE)
+setwd("./exp/EA4811")
 
 # uso esta semilla para los canaritos
-set.seed(102191)
+set.seed(532575)
 
 # agrego 30 variables canarito,
 #  random distribucion uniforme en el intervalo [0,1]
@@ -29,10 +29,10 @@ modelo <- rpart(
     data = dataset[foto_mes == 202107, ],
     model = TRUE,
     xval = 0,
-    cp = -0.82,
-    minsplit = 769,
-    minbucket = 8,
-    maxdepth = 6
+    cp = -0.99,
+    minsplit = 1249,
+    minbucket = 19,
+    maxdepth = 7
 )
 
 
